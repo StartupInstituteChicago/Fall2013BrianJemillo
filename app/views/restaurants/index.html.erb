@@ -7,6 +7,7 @@
     <th>Description</th>
 	<th>Full Address</th>
     <th>Phone Number</th>
+	<th>Image</th>
   </tr>
  
   <% @restaurants.each do |restaurant| %>
@@ -16,6 +17,7 @@
       <td><%= restaurant.description %></td>
 	  <td><%= restaurant.full_address %></td>
       <td><%= restaurant.phone_number %></td>
+	  <td><%= image_tag restaurant.image_url.to_s, :size => '35x35' %></td>
 	  <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
 	  <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
 	  <td><%= link_to 'Destroy', restaurant_path(restaurant), method: :delete, data: {confirm: 'Are you sure?'} %></td>

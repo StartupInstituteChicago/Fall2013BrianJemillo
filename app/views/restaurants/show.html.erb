@@ -17,4 +17,9 @@
   <strong>Phone Number:</strong>
   <%= @restaurant.phone_number %>
 </p>
+
+<p>
+  <strong>Restaurant Image:</strong><br>
+  <%= image_tag @restaurant.image_url.to_s, :size => '400x300' %>
+</p>
 <%= link_to 'Back', restaurants_path %> | <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>

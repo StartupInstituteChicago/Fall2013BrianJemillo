@@ -33,7 +33,8 @@ group :doc do
 end
 #gem 'rmagick', '2.12.0-x86-mswin32'
   gem 'carrierwave'
-#gem 'twitter-bootstrap-rails'
+  gem 'devise'
+  gem 'twitter-bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

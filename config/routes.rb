@@ -1,7 +1,6 @@
 RestaurantApp::Application.routes.draw do
   root "welcome#index"
-  get "welcome" => "welcome#index"
-  get "yourmom" => "welcome#index"
+  devise_for :owners
   resources :restaurants
   
   # The priority is based upon order of creation: first created -> highest priority.

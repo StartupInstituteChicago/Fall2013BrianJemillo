@@ -1,15 +1,13 @@
 require 'spec_helper'
 
 describe RestaurantsController do
-	describe "GET #index" do
+	describe "GET #index when user is not logged in" do
 		it "should get index page" do
 			get :index
-			response.status.should eq 200
+			response.status.should eq 302
 		end
-
-		it "should get all restaurants" do
-			
-		end
-
+	end
+	describe "GET #index when user is "
+	
 	end
 end

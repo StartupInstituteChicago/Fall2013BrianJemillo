@@ -33,10 +33,24 @@ group :doc do
 end
 #gem 'rmagick', '2.12.0-x86-mswin32'
 
-gem 'carrierwave'
+# Use Carrierwave to manage image uploads
+gem 'carrierwave'	
+gem 'unf'
+
+# Use fog to upload images to Amazon S3
+gem 'fog'
+
+# Use Devise to manage login
 gem 'devise'
+
+# For twitter link styling
 gem 'twitter-bootstrap-rails'
+
+# Use Rspec for testing the rails application
 gem 'rspec-rails'
+
+# Use FactoryGirl to generate users for testing
+gem 'factory_girl_rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

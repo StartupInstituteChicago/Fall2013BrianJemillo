@@ -19,15 +19,20 @@ class RestaurantsController < ApplicationController
   end
   def edit
     @restaurant = Restaurant.find(params[:id])
+    owner_of_restaurant_check
   end
   def update
     @restaurant = Restaurant.find(params[:id])
-	
-	if @restaurant.update(restaurant_params)
-	  redirect_to @restaurant
-	else
-	  render 'edit'
-	end
+    if @restaurant.owner == current_owner
+      if @restaurant.update(restaurant_params)
+        redirect_to @restaurant
+      else
+        render 'edit'
+      end
+    else
+      flash[:notice] = "You do not own this restaurant!"
+      redirect_to restaurants_path
+    end
   end
   def show
     @restaurant = Restaurant.find(params[:id])
@@ -38,6 +43,12 @@ class RestaurantsController < ApplicationController
 	
 	redirect_to restaurants_path
   end
+  def owner_of_restaurant_check
+    if @restaurant.owner != current_owner 
+      flash[:notice] = "You do not own this restaurant!"
+      redirect_to restaurants_path
+    end
+ end
   private
     def restaurant_params
 	  params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :image_url)

@@ -27,7 +27,7 @@
   
   <p>
     <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number, 'data-required' => true, 'data-notblank' => true, 'data-trigger' => 'focusin focusout change blur' %>
+    <%= f.text_field :phone_number, 'data-required' => true, 'data-notblank' => true, 'data-regexp' => '^[0-9\-\(\)\s]*$', 'data-trigger' => 'focusin focusout change blur' %>
   </p>
 
   <p>
